@@ -89,11 +89,33 @@ console.log(orders);
 //Task 4 - Create a Function to Calculate Total for an Order
 
 const calculateOrderTotal = (order) => {
-    return order.items.reduce((sum, orderedItem) => {
-        let product = inventory.find(x => x.name === orderedItem.name);
-        return sum + product.price * orderedItem.quantity;
-    }, 0);
+    return order.items.reduce((sum, orderedItem) => { // sum total
+        let product = inventory.find(x => x.name === orderedItem.name); //find inventory with .find method
+        return sum + product.price * orderedItem.quantity; //calc total and add to sum
+    }, 0); // ensure sum begins from 0
 };
+
+// REMOVE // below to test output
+//let total = calculateOrderTotal(orders[0]);
+//console.log("John's total is: $" + total);
+
+// Task 5 - Create a Function to Mark an Order as Completed
+const completeOrder = (customerName) => {
+    let order = orders.find(c => c.customerName === customerName); // find the order to match customers name
+
+    // if statement for completion
+    if (order) {
+        order.status = "complete";
+        console.log (customerName + " order is complete ")
+     } else {
+console.log("Order not found for " + customerName)
+     }
+};
+
+// TO TEST REMOVE // BELOW
+// completeOrder("John")
+// console.log(orders)
+
 
 //let total = calculateOrderTotal(orders[0]);  // Calculating total for John's order
 //console.log("Total Price for John's Order: $" + total);
