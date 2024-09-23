@@ -81,11 +81,22 @@ let itemsOrdered = [
 ];
 
 // Place the order - testing 3
-// placeOrder("John", itemsOrdered);
+placeOrder("John", itemsOrdered);
 
-// console.log(inventory);
-// console.log(orders);
+console.log(inventory);
+console.log(orders);
 
+//Task 4 - Create a Function to Calculate Total for an Order
+
+const calculateOrderTotal = (order) => {
+    return order.items.reduce((sum, orderedItem) => {
+        let product = inventory.find(x => x.name === orderedItem.name);
+        return sum + product.price * orderedItem.quantity;
+    }, 0);
+};
+
+//let total = calculateOrderTotal(orders[0]);  // Calculating total for John's order
+//console.log("Total Price for John's Order: $" + total);
 
 
 
