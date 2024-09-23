@@ -19,7 +19,17 @@ const inventory = [latte, coffee, espresso, pastry];
 
 // console.log(inventory); // To Test output
 
+// Task 2 - Create an Orders Array of Order Objects
 
+class Order {
+    constructor (customerName, items, status) {
+        this.customerName = customerName;
+        this.items = items;
+        this.status = status;
+    }
+}
+
+let orders = [];
 
 
 
@@ -51,3 +61,18 @@ const inventory = [latte, coffee, espresso, pastry];
 
 // let Kyle = new Human('Kyle', 1.97, 1.5)
 // console.log(Kyle.height);
+ 
+// for (let i = 0; i < 98; i++) {
+//      console.log(i+100)
+// } 
+
+// DISREGARD PRACTICE - Program to add first n natural numbers
+
+// let sum = 0
+// let n = prompt("Enter the value of n");
+// n = Number.parseInt(n)
+// for (let i = 0; i < n; i++) {
+//     sum += (i+1)
+// }
+// console.log(" Sum of first " + n + " natural numbers is " + sum)
+//
