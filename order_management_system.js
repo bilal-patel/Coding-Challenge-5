@@ -80,11 +80,11 @@ let itemsOrdered = [
     { name: 'croissant', quantity: 1 }
 ];
 
-// Place the order - testing 3
-placeOrder("John", itemsOrdered);
+// Place the order - testing 3 REMOVE // to test below
+//placeOrder("John", itemsOrdered);
 
-console.log(inventory);
-console.log(orders);
+//console.log(inventory);
+//console.log(orders);
 
 //Task 4 - Create a Function to Calculate Total for an Order
 
@@ -116,10 +116,21 @@ console.log("Order not found for " + customerName)
 // completeOrder("John")
 // console.log(orders)
 
+// Task 6 - Create a Function to Check Pending Orders
+const checkPendingOrders = () => {
+for (let i = 0; i < orders.length; i++) { //loop thorugh array
+    let order = orders[i];
+    
+    // if pending, log
+    if (order.status === "Pending") {
+        console.log("Order pending for", order)}
 
-//let total = calculateOrderTotal(orders[0]);  // Calculating total for John's order
-//console.log("Total Price for John's Order: $" + total);
+}
+}
+// TEST BELOW BY REMOVING //
+//checkPendingOrders();
 
+// DISREGARD ANYTHING BELOW THIS--------------------------------------------------------------------------------------------------------
 
 
 // DISREGARD BELOW PRACTICE - Creating classes
