@@ -32,6 +32,60 @@ class Order {
 let orders = [];
 
 
+// Task 3 - Create a Function to Place an Order
+//checking stock for each item
+function placeOrder (customerName, items) {
+for (let i = 0; i < items.length; i++) {
+    let orderedItem = items[i];
+    let product = null;
+
+
+// find matching product
+for (let j = 0; j < inventory.length; j++) {
+    if (inventory[j].name === orderedItem.name) {
+        product = inventory[j];
+        break;
+    }
+}
+// if product not found
+if (product === null) {
+    console.log(orderedItem.name  + "not found in inventory");
+    return;
+}
+// if product not in stock
+if (product.quantity < orderedItem.quantity) {
+    console.log(" Not enough stock " + orderedItem.name);
+    return;
+}
+}
+
+// If items in stock ,update inv
+for (let i = 0; i < items.length; i++) {
+    let orderedItem = items[i];
+
+for  (let j = 0; j < inventory.length; j++) {
+    if (inventory[j].name === orderedItem.name) {
+        inventory[j].quantity -= orderedItem.quantity;
+    }
+}
+}
+// creat new order using push
+let newOrder = new Order(customerName, items, "Pending")
+orders.push(newOrder);
+console.log("Placed Order, Thanks " + customerName);
+}
+
+let itemsOrdered = [
+    { name: 'latte', quantity: 2 },
+    { name: 'croissant', quantity: 1 }
+];
+
+// Place the order - testing 3
+// placeOrder("John", itemsOrdered);
+
+// console.log(inventory);
+// console.log(orders);
+
 
 
 
